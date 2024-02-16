@@ -23,7 +23,7 @@ app.get("/drinks", (req, res) => {
 // Henter en specifik drink med ID
 app.get("/drinks/:id", (req, res) => {
   const id = req.params.id; // Fjernet destruktueringens klamme parenteser rundt om 'id'
-  const drink = drinks.find((d) => d.id === parseInt(id));
+  const drink = drinks.find((id) => d.id === parseInt(id));
   if (!drink) {
     return res.status(404).send({ data: "Drink doesn't exist" });
   }
